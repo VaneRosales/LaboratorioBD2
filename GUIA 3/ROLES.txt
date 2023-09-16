@@ -1,0 +1,50 @@
+ROLES:
+
+Rol-1: Sysadmin
+|*Tiene acceso roles, usuarios, permisos, opciones
+	-agg: insert
+	-consultar: select
+	-Modificar: update
+	-eliminar: delete
+
+Rol-2: Gerente
+*Tiene acceso a todas las tablas, menos a las del sysadmin
+	-agg
+	-consultar
+	-Modificar
+
+Rol-3: RRHH(recuersos humanos)
+*Gestiona empleados, direcciones,cargos
+	-agg: insert
+	-consultar
+	-modificar
+
+Rol-4: Cajero
+*Gestiona o tiene acceso a Clientes, detallesventas, direcciones, ventas:
+	-agg: insert
+	-consultar: select
+	-Modificar: update
+*tiene acceso a factura:
+	-agg: insert
+	-consultar: select
+
+Rol-5:Contador
+*Gestiona facturas:
+	-consultas: select
+
+Rol-6:Comprador
+*Gestiona los medicamentos de la farmacia y los proveedores, tambien tiene accesso a compras, detalles compras.
+	-agg: insert
+	-consultar: select
+	-Modificar: update
+
+Rol-7: EncargadoBodega
+*Gestiona medicamentos
+	-consultar: select
+	-Modificar: update
+
+*Gestiona compras, detalles pedido
+	-consultar: select
+	-Modificar: update
+
+
